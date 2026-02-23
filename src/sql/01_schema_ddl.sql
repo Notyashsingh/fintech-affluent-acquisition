@@ -42,3 +42,11 @@ CREATE INDEX idx_income ON raw.prospects_raw(annual_income);
 CREATE INDEX idx_credit ON raw.prospects_raw(credit_score);
 CREATE INDEX idx_channel ON raw.prospects_raw(campaign_channel);
 CREATE INDEX idx_trb ON analytics.financials(total_trb);
+
+-- Generate customers only for converted prospects
+INSERT INTO analytics.customers (prospect_id, onboarding_date)
+SELECT 
+    prospect_id,
+    CURRENT_DATE - (RANDOM() * 365)::INT
+FROM raw.prospects_raw
+WHERE converted = TRUE;

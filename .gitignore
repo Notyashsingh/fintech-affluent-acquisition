@@ -1,7 +1,5 @@
 venv/
 __pycache__/
 *.pyc
-data/raw/
-data/processed/
 *.ipynb_checkpoints
 dash_raw.pbix

@@ -1,122 +1,216 @@
-💰 Fintech Marketing Budget Reallocation Simulation
-Channel-Level Unit Economics | ROI Analysis | Scenario Modeling | Sensitivity Testing
+# 💰 Fintech Marketing Budget Reallocation Simulation
 
-📌 Business Problem
-Which marketing channel is most efficient at acquiring affluent customers, and how should we reallocate budget to maximize affluent TRB (Total Relationship Balance)?
+> **Channel-Level Unit Economics | ROI Analysis | Scenario Modeling | Sensitivity Testing**
 
-Classic marketing efficiency & resource allocation challenge
+---
 
-🎯 Objectives
-🔍 Identify most efficient affluent acquisition channel
+## 📌 Business Problem
 
-📊 Quantify channel-level ROI metrics
+> Which marketing channel is most efficient at acquiring affluent customers, and how should we reallocate budget to maximize affluent TRB (Total Relationship Balance)?
 
-💡 Simulate budget reallocation scenarios
+This is a classic **marketing efficiency & resource allocation challenge** — using data-driven unit economics to shift spend toward the highest-performing acquisition channels.
 
-📈 Measure incremental affluent TRB impact
+---
 
-✅ Deliver defensible business recommendation
+## 🎯 Objectives
 
-🧠 Analytical Framework
-1️⃣ KPI & Unit Economics Layer
-Files: src/sql/03_KPI_queries.sql | src/sql/04_channel_roi_summary.sql
+| # | Objective |
+|---|-----------|
+| 1 | 🔍 Identify the most efficient affluent customer acquisition channel |
+| 2 | 📊 Quantify channel-level ROI metrics (CPAA, ROAS) |
+| 3 | 💡 Simulate budget reallocation scenarios |
+| 4 | 📈 Measure incremental affluent TRB impact |
+| 5 | ✅ Deliver a defensible business recommendation |
 
-Channel Efficiency Snapshot:
+---
 
-text
-graph TD
-    Referral[Referral<br/>CPAA: 22,248<br/>ROAS: 216]
-    Digital[Digital Ads<br/>CPAA: 22,949<br/>ROAS: 208]
-    Branch[Branch<br/>CPAA: 23,272<br/>ROAS: 205]
-    RM[RM<br/>CPAA: 23,507<br/>ROAS: 204]
-    
-    Referral -->|Strongest| A[🏆 Recommendation]
-Key Metrics Table:
+## 🧠 Analytical Framework
 
-Channel	Total Customers	Affluent Customers	CPAA	ROAS (Affluent)
-Referral	-	-	22,248	216 🔝
-Digital Ads	-	-	22,949	208
-Branch	-	-	23,272	205
-RM	-	-	23,507	204
-2️⃣ Budget Reallocation Simulation
-File: src/sql/05_budget_simulation.sql
+The project is structured as a three-layer analytical pipeline:
 
-Linear Reallocation Model Assumptions:
+```
+Raw Data → KPI & Unit Economics → Budget Simulation → Sensitivity Analysis → Recommendation
+```
 
-✅ Stable conversion rates
+---
 
-✅ Constant CPAA
+### 1️⃣ KPI & Unit Economics Layer
 
-✅ Proportional ROAS
+> **Files:** `src/sql/03_KPI_queries.sql` | `src/sql/04_channel_roi_summary.sql`
 
-❌ No diminishing returns
+#### Channel Efficiency Snapshot
 
-❌ No cannibalization
+```
+Referral  ──────────────────────────────────────────────────────  CPAA: 22,248 | ROAS: 216 🏆
+Digital   ──────────────────────────────────────────────────────  CPAA: 22,949 | ROAS: 208
+Branch    ──────────────────────────────────────────────────────  CPAA: 23,272 | ROAS: 205
+RM        ──────────────────────────────────────────────────────  CPAA: 23,507 | ROAS: 204
+```
 
-Result: +44.2M incremental affluent TRB
+#### Channel ROI Metrics Table
 
-3️⃣ Sensitivity Analysis
-File: src/sql/07_sensitivity_analysis.sql
+| Channel | Total Customers | Affluent Customers | CPAA (₹) | ROAS (Affluent) | Rank |
+|---|---|---|---|---|---|
+| Referral | — | — | 22,248 | 216 | 🥇 1st |
+| Digital Ads | — | — | 22,949 | 208 | 🥈 2nd |
+| Branch | — | — | 23,272 | 205 | 🥉 3rd |
+| RM | — | — | 23,507 | 204 | 4th |
 
-% Shift → Referral	New TRB	Incremental Gain	% Gain
-5%	19.70B	+187M	+0.96%
-10%	19.88B	+374M	+1.92%
-20%	20.26B	+748M	+3.83%
-30%	20.63B	+1.12B	+5.75%
-🏆 Executive Recommendation
-text
-💡 ACTION: Reallocate 10-20% budget to Referral channel
+> **Key Insight:** Referral channel delivers the lowest cost-per-affluent-acquisition (CPAA) and highest return on ad spend (ROAS), making it the optimal target for budget reallocation.
 
-📊 IMPACT:
-• 374M–748M TRB uplift
-• 2–3.8% total TRB growth
-• Low implementation risk
+---
 
-✅ Why feasible: Politically neutral, data-backed, immediate impact
-🧩 Skills Demonstrated
-✅ Marketing Channel Efficiency Analysis
+### 2️⃣ Budget Reallocation Simulation
 
-✅ ROI & Unit Economics
+> **File:** `src/sql/05_budget_simulation.sql`
 
-✅ Deterministic Scenario Modeling
+#### Model Assumptions
 
-✅ Multi-level Sensitivity Testing
+| Assumption | Status |
+|---|---|
+| Stable conversion rates | ✅ Applied |
+| Constant CPAA per channel | ✅ Applied |
+| Proportional ROAS scaling | ✅ Applied |
+| Diminishing returns modeled | ❌ Not modeled |
+| Cannibalization effects | ❌ Not modeled |
 
-✅ Executive Communication
+#### Simulation Result
 
-📁 Repository Structure
+```
+Baseline Budget Allocation  →  Optimized Allocation (↑ Referral)
+                                        ↓
+                        +44.2M Incremental Affluent TRB
+```
 
-💾 src/sql/
-├── 01_schema_ddl.sql               # Schema Structure
-├── 02_analytics_views.sql          # Analytics View
-├── 03_KPI_queries.sql              # Core metrics
-├── 04_channel_roi_summary.sql      # Channel aggregation
-├── 05_budget_simulation.sql        # Reallocation model
-├── 06_scenario_comparison.sql      # Scenario outputs
-└── 07_sensitivity_analysis.sql     # Sensitivity tests
-|
-📊 dashboards/                     # Power BI dashboards
-|
-📝 reports/                       
+---
 
-🐍 python/                          # Analysis scripts
-🛠️ Tech Stack
-🚀 Getting Started
-bash
-# 1. Clone repository
+### 3️⃣ Sensitivity Analysis
+
+> **File:** `src/sql/07_sensitivity_analysis.sql`
+
+Measures the TRB uplift from progressively shifting budget toward the Referral channel.
+
+| Budget Shift → Referral | New TRB | Incremental Gain | % Gain |
+|---|---|---|---|
+| 5% | 19.70B | +187M | +0.96% |
+| 10% | 19.88B | +374M | +1.92% |
+| 20% | 20.26B | +748M | +3.83% |
+| 30% | 20.63B | +1.12B | +5.75% |
+
+> A **10–20% reallocation** offers the best balance of impact and implementation risk.
+
+---
+
+## 🏆 Executive Recommendation
+
+```
+╔══════════════════════════════════════════════════════════════════╗
+║  💡 ACTION: Reallocate 10–20% of marketing budget → Referral    ║
+╠══════════════════════════════════════════════════════════════════╣
+║  📊 IMPACT:                                                      ║
+║     • 374M – 748M TRB uplift                                     ║
+║     • 2% – 3.8% total TRB growth                                 ║
+║     • Low implementation risk                                    ║
+╠══════════════════════════════════════════════════════════════════╣
+║  ✅ WHY FEASIBLE:                                                 ║
+║     Politically neutral, fully data-backed, immediate impact     ║
+╚══════════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 📈 Key Results Summary
+
+| Metric | Baseline | Optimized (20% shift) | Uplift |
+|---|---|---|---|
+| Affluent TRB | 19.51B | 20.26B | **+748M** |
+| Best Channel | Mixed | Referral | — |
+| TRB Growth | — | — | **+3.83%** |
+| Implementation Risk | — | — | ✅ Low |
+
+---
+
+## 🧩 Skills Demonstrated
+
+| Domain | Skill |
+|---|---|
+| Analytics | Marketing Channel Efficiency Analysis |
+| Finance | ROI & Unit Economics (CPAA, ROAS) |
+| Modeling | Deterministic Scenario Modeling |
+| Testing | Multi-level Sensitivity Testing |
+| Communication | Executive-ready Recommendations |
+
+---
+
+## 📁 Repository Structure
+
+```
+fintech-budget-sim/
+│
+├── 📂 src/sql/
+│   ├── 01_schema_ddl.sql              # Schema structure & table definitions
+│   ├── 02_analytics_views.sql         # Reusable analytics views
+│   ├── 03_KPI_queries.sql             # Core performance metrics
+│   ├── 04_channel_roi_summary.sql     # Channel-level ROI aggregation
+│   ├── 05_budget_simulation.sql       # Budget reallocation model
+│   ├── 06_scenario_comparison.sql     # Scenario output comparisons
+│   └── 07_sensitivity_analysis.sql    # Sensitivity tests
+│
+├── 📊 dashboards/                     # Power BI dashboard files (.pbix)
+│
+├── 📝 reports/                        # Output reports & presentations
+│
+└── 🐍 python/                         # Python analysis scripts
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Data Storage | PostgreSQL / SQL |
+| Analytics | SQL (DDL, Views, Aggregations) |
+| Simulation | SQL-based deterministic modeling |
+| Visualization | Power BI |
+| Scripting | Python |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- PostgreSQL installed and running
+- Power BI Desktop (for dashboards)
+- Python 3.x (for analysis scripts)
+
+### Installation & Setup
+
+```bash
+# 1. Clone the repository
 git clone https://github.com/yourusername/fintech-budget-sim.git
+cd fintech-budget-sim
 
-# 2. Run SQL pipeline (sequence matters)
+# 2. Run the SQL pipeline in sequence
 psql -f src/sql/01_schema_ddl.sql
 psql -f src/sql/02_analytics_views.sql
 psql -f src/sql/03_KPI_queries.sql
 psql -f src/sql/04_channel_roi_summary.sql
-# ... continue through 07_sensitivity_analysis.sql
+psql -f src/sql/05_budget_simulation.sql
+psql -f src/sql/06_scenario_comparison.sql
+psql -f src/sql/07_sensitivity_analysis.sql
 
 # 3. Open Power BI dashboards
-dashboards/reports/*.pbix
-📈 Key Results Summary
-Metric	Baseline	Optimized	Uplift
-Affluent TRB	19.51B	20.26B	+748M
-Channel Efficiency	Mixed	Referral	+3.83%
-Implementation Risk	-	Low	✅
+# Launch Power BI Desktop and open files from:
+# dashboards/reports/*.pbix
+```
+
+---
+
+## 📄 License
+
+This project is for portfolio and educational purposes.
+
+---
+
+*Built to demonstrate data-driven marketing budget optimization using SQL-based unit economics and scenario modeling.*

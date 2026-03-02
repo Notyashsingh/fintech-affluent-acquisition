@@ -128,6 +128,18 @@ Measures the TRB uplift from progressively shifting budget toward the Referral c
 
 ---
 
+## 📊 Dashboard
+
+This project includes a presentation-ready executive dashboard summarizing:
+
+- Channel-level CPAA & ROAS  
+- Affluent TRB performance  
+- Budget reallocation scenario impact  
+- Sensitivity analysis results  
+
+<img width="2000" height="1221" alt="image" src="https://github.com/user-attachments/assets/6fd6c91b-5f92-4dc0-aff7-aa0ff1c19823" />
+
+
 ## 🧩 Skills Demonstrated
 
 | Domain | Skill |
@@ -143,7 +155,7 @@ Measures the TRB uplift from progressively shifting budget toward the Referral c
 ## 📁 Repository Structure
 
 ```
-fintech-budget-sim/
+fintech-affluent-acquisition/
 │
 ├── 📂 src/sql/
 │   ├── 01_schema_ddl.sql              # Schema structure & table definitions
@@ -158,7 +170,9 @@ fintech-budget-sim/
 │
 ├── 📝 reports/                        # Output reports & presentations
 │
-└── 🐍 python/                         # Python analysis scripts
+└── 🗂️ Data/                           # Raw and Processed Data
+    ├──Raw/
+    ├──Processed/
 ```
 
 ---

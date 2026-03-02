@@ -41,20 +41,20 @@ Raw Data → KPI & Unit Economics → Budget Simulation → Sensitivity Analysis
 #### Channel Efficiency Snapshot
 
 ```
-Referral  ──────────────────────────────────────────────────────  CPAA: 22,248 | ROAS: 216 🏆
-Digital   ──────────────────────────────────────────────────────  CPAA: 22,949 | ROAS: 208
-Branch    ──────────────────────────────────────────────────────  CPAA: 23,272 | ROAS: 205
-RM        ──────────────────────────────────────────────────────  CPAA: 23,507 | ROAS: 204
+Referral  ─────────────── CPAA: 22,248 | ROAS: 216 🏆
+Digital   ─────────────── CPAA: 22,949 | ROAS: 208
+Branch    ─────────────── CPAA: 23,272 | ROAS: 205
+RM        ─────────────── CPAA: 23,507 | ROAS: 204
 ```
 
 #### Channel ROI Metrics Table
 
 | Channel | Total Customers | Affluent Customers | CPAA (₹) | ROAS (Affluent) | Rank |
 |---|---|---|---|---|---|
-| Referral | — | — | 22,248 | 216 | 🥇 1st |
-| Digital Ads | — | — | 22,949 | 208 | 🥈 2nd |
-| Branch | — | — | 23,272 | 205 | 🥉 3rd |
-| RM | — | — | 23,507 | 204 | 4th |
+| Referral | 4599 | 619 | 22,248 | 216 | 🥇 1st |
+| Digital Ads | 12660 | 1652 | 22,949 | 208 | 🥈 2nd |
+| Branch | 7774 | 1002 | 23,272 | 205 | 🥉 3rd |
+| RM | 6204 | 795 | 23,507 | 204 | 4th |
 
 > **Key Insight:** Referral channel delivers the lowest cost-per-affluent-acquisition (CPAA) and highest return on ad spend (ROAS), making it the optimal target for budget reallocation.
 
@@ -77,9 +77,8 @@ RM        ───────────────────────�
 #### Simulation Result
 
 ```
-Baseline Budget Allocation  →  Optimized Allocation (↑ Referral)
-                                        ↓
-                        +44.2M Incremental Affluent TRB
+Baseline Budget Allocation  →  Optimized Allocation (↑ Referral) →  +44.2M Incremental Affluent TRB
+                                        
 ```
 
 ---
@@ -104,29 +103,28 @@ Measures the TRB uplift from progressively shifting budget toward the Referral c
 ## 🏆 Executive Recommendation
 
 ```
-╔══════════════════════════════════════════════════════════════════╗
-║  💡 ACTION: Reallocate 10–20% of marketing budget → Referral    ║
-╠══════════════════════════════════════════════════════════════════╣
-║  📊 IMPACT:                                                      ║
-║     • 374M – 748M TRB uplift                                     ║
-║     • 2% – 3.8% total TRB growth                                 ║
-║     • Low implementation risk                                    ║
-╠══════════════════════════════════════════════════════════════════╣
-║  ✅ WHY FEASIBLE:                                                 ║
-║     Politically neutral, fully data-backed, immediate impact     ║
-╚══════════════════════════════════════════════════════════════════╝
+💡 ACTION: Reallocate 10–20% of marketing budget → Referral
+
+📊 IMPACT:                                                      
+    • 374M – 748M TRB uplift                                     
+    • 2% – 3.8% total TRB growth                                 
+    • Low implementation risk
+
+✅ WHY FEASIBLE:                                                
+     Politically neutral, fully data-backed, immediate impact
 ```
 
 ---
 
 ## 📈 Key Results Summary
 
-| Metric | Baseline | Optimized (20% shift) | Uplift |
-|---|---|---|---|
-| Affluent TRB | 19.51B | 20.26B | **+748M** |
-| Best Channel | Mixed | Referral | — |
-| TRB Growth | — | — | **+3.83%** |
-| Implementation Risk | — | — | ✅ Low |
+| Metric | Baseline | Optimized (20% Shift to Referral) | Impact |
+|--------|----------|-----------------------------------|--------|
+| Affluent TRB | 19.51B | 20.26B | **+748M Incremental** |
+| TRB Growth | 0% (Reference Scenario) | 3.83% | **+3.83% Portfolio Lift** |
+| Highest Efficiency Channel | Referral (Best ROAS & Lowest CPAA) | Referral (Scaled Allocation) | Efficiency Advantage Maintained |
+| Budget Allocation Strategy | Historical Distribution | 20% Reweighted Toward Referral | Strategic Reallocation |
+| Implementation Risk | Stable Current Mix | Controlled Moderate Shift | ✅ Low |
 
 ---
 
